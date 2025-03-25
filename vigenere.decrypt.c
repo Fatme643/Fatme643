@@ -18,11 +18,11 @@ char *vigenere_decrypt(char *cipher, char *key)
             int shift = tolower(key[i % key_length]) - 'a';
             if (islower(cipher[i]))
             {
-                plaintext[i] = (cipher[i] - 'a' + shift) % 26 + 'a';
+                plaintext[i] = (cipher[i] - 'a' - shift + 26) % 26 + 'a';
             }
             else
             {
-                plaintext[i] = (cipher[i] - 'A' + shift) % 26 + 'A';
+                plaintext[i] = (cipher[i] - 'A' - shift + 26) % 26 + 'A';
             }
         }
         else
